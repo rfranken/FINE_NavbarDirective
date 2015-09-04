@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="FineNavbar" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="FineNavbar" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="FineNavbar" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="FineNavbar" class="no-js"> <!--<![endif]-->
-<html lang="en" ng-app="FineNavbar">
+<html lang="en" ng-app="fine.navbar">
 
 <head>
   <meta charset="utf-8" />
@@ -14,10 +9,11 @@
   <link rel="stylesheet" href="ui-navbar.css" />
 
   <!-- JavaScript -->
-  <script data-require="angular.js@1.3.15" data-semver="1.3.15" src="https://code.angularjs.org/1.3.15/angular.js"></script>
+  <script data-require="angular.js@1.3.15" data-semver="1.3.15" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+
   <script data-require="angular-ui-bootstrap@0.12.0" data-semver="0.12.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
   <script data-require="ui-router@0.2.13" data-semver="0.2.13" src="//rawgit.com/angular-ui/ui-router/0.2.13/release/angular-ui-router.js"></script>
-  <script src="script.js"></script>
+  <script src="fine-navbar.js"></script>
   <script src="ui-navbar.js"></script>
 
 </head>
@@ -32,40 +28,40 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" ui-sref="home">Brand</a>
+      <a class="navbar-brand" ui-sref="home">FINE</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
       <ul class="nav navbar-nav">
         <li dropdown="">
           <a href="#" dropdown-toggle="">
-            Dropdown
+            FINE CRM
             <b class="caret"></b>
           </a>
-          <tree tree="tree"></tree>
+          <tree tree="treeFineCrm"></tree>
         </li>
         <li dropdown="">
           <a href="#" dropdown-toggle="">
-            Just a clone
-            <span class="caret"></span>
+            FINE Billing
+            <b class="caret"></b>
           </a>
-          <tree tree="tree"></tree>
+          <tree tree="treeFineBilling"></tree>
+        </li>
+        <li dropdown="">
+          <a href="#" dropdown-toggle="">
+            Beheer
+            <b class="caret"></b>
+          </a>
+          <tree tree="treeBeheer"></tree>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li dropdown="">
           <a href="#" dropdown-toggle="">
-            Dropdown right
-            <b class="caret"></b>
-          </a>
-          <tree tree="tree"></tree>
-        </li>
-        <li dropdown="">
-          <a href="#" dropdown-toggle="">
-            Just a clone right
+            Mijn account
             <span class="caret"></span>
           </a>
-          <tree tree="tree"></tree>
+          <tree tree="treeMijnAccount"></tree>
         </li>
       </ul>
     </div>
@@ -74,8 +70,16 @@
 </div>
 
 <!-- Hook here the partials -->
-<div ui-view=""></div>
+<div ui-view=""></div >
 
+
+<!-- Footer -->
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text pull-left">Roelie</p>
+    <a class="navbar-btn btn-info btn pull-right">Button</a>
+  </div>
+</div>
 </body>
 
 </html>
