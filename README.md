@@ -4,11 +4,11 @@ This project zet het menu (als navigatiebalk bovenin) van FINE op via de angular
 
 [https://github.com/angular-ui/ui-router/](https://github.com/angular-ui/ui-router/)
 
-## Onderdelen:
+## Onderdelen
 
-###```ui-navbar.js```: Definieert de applicatie 'ui.navbar', die de generieke navigatiebalk bevat.
-###```fine-navbar.js```: Vult de generieke navigatiebalk met FINE-speficieke menu's, submenu's en menu-items
-###```index.html```: toont de navigatiebalk bovenin. Deze index.html is alleen voor demonstratie- en testdoeleinden.
+```ui-navbar.js```: Definieert de applicatie 'ui.navbar', die de generieke navigatiebalk bevat.
+```fine-navbar.js```: Vult de generieke navigatiebalk met FINE-speficieke menu's, submenu's en menu-items
+```index.html```: toont de navigatiebalk bovenin. Deze index.html is alleen voor demonstratie- en testdoeleinden.
  
 ## Structuur van het menu:
 Er zijn drie hoofdmenu's op dit moment:
