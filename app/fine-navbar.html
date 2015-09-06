@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">FINE</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+        <ul class="nav navbar-nav">
+            <li dropdown="">
+                <a href="#" dropdown-toggle="">
+                    FINE CRM
+                    <b class="caret"></b>
+                </a>
+                <tree tree="treeFineCrm"></tree>
+            </li>
+            <li dropdown="">
+                <a href="#" dropdown-toggle="">
+                    FINE Billing
+                    <b class="caret"></b>
+                </a>
+                <tree tree="treeFineBilling"></tree>
+            </li>
+            <li dropdown="">
+                <a href="#" dropdown-toggle="">
+                    Beheer
+                    <b class="caret"></b>
+                </a>
+                <tree tree="treeBeheer"></tree>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li dropdown="">
+                <a href="#" dropdown-toggle="">
+                    Mijn account
+                    <span class="caret"></span>
+                </a>
+                <tree tree="treeMijnAccount"></tree>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>

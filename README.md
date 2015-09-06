@@ -6,17 +6,24 @@ This project zet het menu (als navigatiebalk bovenin) van FINE op via de angular
 
 ## Onderdelen
 
+```fine-navbar.html```: Bevat het HTML-fragment (HTML5 NAV-element, zie [hier](http://www.w3schools.com/tags/tag_nav.asp) 
+voor meer informatie) met de placeholders voor de hoofdmenu's 
+
 ```ui-navbar.js```: Definieert de applicatie 'ui.navbar', die de generieke navigatiebalk bevat.
+
 ```fine-navbar.js```: Vult de generieke navigatiebalk met FINE-speficieke menu's, submenu's en menu-items
-```index.html```: toont de navigatiebalk bovenin. Deze index.html is alleen voor demonstratie- en testdoeleinden.
+
+```index.html```: toont de navigatiebalk bovenin door ```ng-include``` van het fragment ```fine-navbar.html```. Deze index.html 
+bevat ook een voettekst-panel en is een aanzet tot de definitieve paginaopzet.
+
  
 ## Structuur van het menu:
-Er zijn drie hoofdmenu's op dit moment:
-0. Link naar applicatieversie
-1. FINE CRM
-2. FINE Billing
-3. Beheer
-4. Mijn account
+Er zijn hoofdmenu's op dit moment:
+1. Link naar applicatieversie
+2. FINE CRM
+3. FINE Billing
+4. Beheer
+5. Mijn account
 
 
 

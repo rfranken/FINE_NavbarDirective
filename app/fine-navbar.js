@@ -8,6 +8,7 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
 
         // Definieer de paden voor de FINE CRM boom:
         $stateProvider
+            // Deze zijn fixed en onafhankelijk van de rechten van de gebruiker
             .state('home', {
                 url: "/home",
                 templateUrl: "partials/fineApplicationData.html",
@@ -59,6 +60,8 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
         // - Beheer      : treeBeheer
         // - Mijn Account: treeMijnAccount
         //
+        // Deze zijn afhankelijk van de rechten van de gebruiker die het menu oproept.
+        // Onderstaand zou dus uit een database met rechten gehaald kunnen/moeten worden.
         $scope.treeFineCrm = [
             {
                 name: "Aansluitingen",
@@ -164,7 +167,7 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
             }
             ,
             {
-                name: "En nog wat...",
+                name: "Instellingen",
                 link: "myAccountMenuChoice2"
             }
             ,
@@ -178,6 +181,6 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
 
 // Controller om metadata over de FINE applicatie op te halen.
 // Voorlopig alleen laatste release. Deze moet uiteraard uit de database worden gehaald:
-.controller('AppInfoController', function($scope,$resolve) {
+.controller('AppInfoController', function($scope,$location) {
     $scope.lastRelease = 'Release_2.0.304a_FINE_FINEONTW_2015-09-03-08_22_41'
 });
