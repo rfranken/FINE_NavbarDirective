@@ -28,7 +28,8 @@
 
 
 <!-- Footer -->
-<div class="navbar navbar-default navbar-fixed-bottom">
+<div class="navbar navbar-default navbar-fixed-bottom" ng-controller="NavigationController">
+  <span style="float: left; padding-top: 6px;" ng-if="readingFromDatabase"><img src="images\throbber.gif" class="bottom"></span>
   <div  class="container">
     <a class="navbar-btn btn-info btn pull-right">Button</a>
   </div>

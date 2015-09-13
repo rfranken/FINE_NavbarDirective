@@ -3,12 +3,10 @@
 // Declare app level module which depends on views, and components
 angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
 
-    .constant('RESOURCE_URL','http://localhost:3001/')
-    .constant('MAX_FETCH_SIZE',50)
 
     .config( function($stateProvider, $urlRouterProvider) {
         // Voor een URL die niet gematched kon worden, ga naar /homepage
-        $urlRouterProvider.otherwise("/home")
+        $urlRouterProvider.otherwise("/home");
 
         // Definieer de paden voor de FINE CRM boom:
         $stateProvider
@@ -63,7 +61,7 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
             })
     })
 
-    .service('rolesFromFileService', function ($http) {
+    .service('rolesFromFileService', function ($http,$timeout) {
             this.getData = function () {
                 return $http.get('fineroles.json');
             }
@@ -77,10 +75,7 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
             function(result){
                 $scope.userRoles=result;
                 $scope.readingFromDatabase=false;
-                console.log('callback');
-                console.log(result);
 
-                console.log('ik ga door')
                 // Definieer de trees onder het hoofdemenu. Dit zijn er op dit moment dus de volgende:
                 // - FINE CRM    : treeFineCrm
                 // - FINE Billing: treeFineBilling
@@ -180,7 +175,10 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
                     ,
                     {
                         name: "Menukeuze 2",
-                        link: "beheerMenuChoice2"
+                        link: "beheerMenuChoice2",
+                        isAuthorized : function() {
+                            return true
+                        }
                     }
                     ,
                     {
@@ -210,7 +208,7 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
             }
             // Vervolge callback:
             ,   function(result) {
-                console.log('Fout' + result.statusText)
+                console.log('Fout' + result.statusText);
                 $scope.readingFromDatabase=false;
             }
         )
@@ -219,6 +217,6 @@ angular.module('fine.navbar', ['ui.bootstrap','ui.router','ui.navbar'])
 
 // Controller om metadata over de FINE applicatie op te halen.
 // Voorlopig alleen laatste release. Deze moet uiteraard uit de database worden gehaald:
-.controller('AppInfoController', function($scope,$location) {
+.controller('AppInfoController', function($scope) {
     $scope.lastRelease = 'Release_2.0.304a_FINE_FINEONTW_2015-09-03-08_22_41'
 });
